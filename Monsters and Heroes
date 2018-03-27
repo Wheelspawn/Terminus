@@ -55,12 +55,18 @@ Fighters and keepers stay within range of their fortresses
 
 Cambions and archdemons are the most powerful monsters in the game, and only found in areas exclusively reserved for undead
 
-Use the binomial probability distribution to randomly generate items, in order from most common to rarest
-
 Turmeric
 Vinegar
-Mushrooms
 Tincture of witch-hazel
+
+Things that cab be found growing in the ground:
+Tree
+Mushroom
+Hyssop
+Rue
+Potato
+Carrot
+Cress
 
 			Attack	Defend	Weight (kg)	Special
 Fists			1	1	0.0
@@ -156,7 +162,7 @@ Humans
 Vampire		dagger, drain, aura
 Wizard		dagger, shockwave, lightning
 Fighter		short sword, longsword, torches
-Hermit		quarterstaff, heal, torches, tinctures of witch-hazel
+Hermit		quarterstaff, heal, torches, tinctures of witch-hazel, hyssop flowers, rue flowers
 
 Halfdragon	short sword, war axe
 
