@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-/* 
+/*
  * File:   Player.h
  * Author: nsage
  *
@@ -14,28 +14,31 @@
 #ifndef PLAYER_H
 #define PLAYER_H
 
+#include <string>
+
 using std::string;
 
 class Player {
 public:
-    Player(int health, string name, char gender);
+    Player(string name);
     Player(const Player& orig);
+    Player();
+
     int getHealth(); // gets player health
     void setHealth(int h); // sets player health
-    void decHealth(int h); // decrements health, e.g. _health -= h
-    
+    void incHealth(int h); // increments health, e.g. _health += h
+
     string getName();
     void setName(string s);
-    char getGender();
-    void setGender(char g);
-    
-    
+
+    void Update();
+
     virtual ~Player();
 private:
-    int _health;
     string _name;
-    char _gender;
-
+    int _health;
+    int _maxhealth;
+    int _tick;
 };
 
 #endif /* PLAYER_H */

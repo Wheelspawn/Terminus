@@ -4,24 +4,31 @@
  * and open the template in the editor.
  */
 
-/* 
+/*
  * File:   Player.cpp
  * Author: nsage
- * 
+ *
  * Created on March 30, 2018, 5:58 PM
  */
 
 #include <string>
 #include "Player.h"
 
-Player::Player(int health=100, string name="Dave", char gender='m') {
-    _health = health;
+Player::Player(string name="Dave") {
     _name = name;
-    _gender = gender;
+    _health=100;
+    _maxhealth=100;
+    _tick=0;
 }
 
 Player::Player(const Player& orig) {
-    
+}
+
+Player::Player() {
+    _health = 100;
+    _name = "Dave";
+    _maxhealth=100;
+    _tick=0;
 }
 
 Player::~Player() {
@@ -35,8 +42,19 @@ void Player::setHealth(int h) {
     _health = h;
 }
 
-void Player::decHealth(int h) {
-    _health -= h;
+void Player::incHealth(int h) {
+    if (_health < _maxhealth) {
+        _health += h;
+
+        if (_health > _maxhealth)
+            _health = _maxhealth;
+        }
+}
+
+void Player::Update() {
+    _tick += 1;
+    if (_tick%10==0)
+        this->incHealth(1);
 }
 
 string Player::getName() {
@@ -45,12 +63,4 @@ string Player::getName() {
 
 void Player::setName(string n) {
     _name = n;
-}
-
-char Player::getGender() {
-    return _gender;
-}
-
-void Player::setGender(char g) {
-    _gender -= g;
 }

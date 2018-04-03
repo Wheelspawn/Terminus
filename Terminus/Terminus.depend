@@ -1,0 +1,17 @@
+# depslib dependency file v1.0
+1522794149 source:/home/nsage/Terminus/main.cpp
+	"Player.h"
+	<iostream>
+	<cstdlib>
+	<vector>
+	<random>
+	<unistd.h>
+	<termios.h>
+
+1522794105 source:/home/nsage/Terminus/Player.cpp
+	<string>
+	"Player.h"
+
+1522794030 /home/nsage/Terminus/Player.h
+	<string>
+
