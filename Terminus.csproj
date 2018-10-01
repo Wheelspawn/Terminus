@@ -1,0 +1,105 @@
+﻿<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{1A226466-86FD-4C3F-9BA1-5BF5B54583F2}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <NoStandardLibraries>false</NoStandardLibraries>
+    <AssemblyName>ConsoleApplication</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RootNamespace>Terminus</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ConsoleEx, Version=1.0.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\ConsoleEx.1.0.4\lib\ConsoleEx.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.11.0.2\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="SadConsole, Version=7.0.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\SadConsole.7.0.4\lib\net\SadConsole.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Terminus\Altar.cs" />
+    <Compile Include="Terminus\Shrine.cs" />
+    <Compile Include="Terminus\Block.cs" />
+    <Compile Include="Terminus\Desert.cs" />
+    <Compile Include="Terminus\Forest.cs" />
+    <Compile Include="Terminus\Grass.cs" />
+    <Compile Include="Terminus\ITerrain.cs" />
+    <Compile Include="Terminus\Lake.cs" />
+    <Compile Include="Terminus\Map.cs" />
+    <Compile Include="Terminus\Mountain.cs" />
+    <Compile Include="Terminus\NPC.cs" />
+    <Compile Include="Terminus\obj\Debug\netcoreapp2.1\Terminus.AssemblyInfo.cs" />
+    <Compile Include="Terminus\Overworld.cs" />
+    <Compile Include="Terminus\OverworldFactory.cs" />
+    <Compile Include="Terminus\Player.cs" />
+    <Compile Include="Terminus\Program.cs" />
+    <Compile Include="Terminus\Terrain.cs" />
+    <Compile Include="Terminus\TerrainFactory.cs" />
+    <Compile Include="Terminus\Wall.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Terminus\bin\Debug\netcoreapp2.1\Terminus.dll" />
+    <Content Include="Terminus\bin\Debug\netcoreapp2.1\Terminus.pdb" />
+    <Content Include="Terminus\obj\Debug\netcoreapp2.1\Terminus.csproj.FileListAbsolute.txt" />
+    <Content Include="Terminus\obj\Debug\netcoreapp2.1\Terminus.dll" />
+    <Content Include="Terminus\obj\Debug\netcoreapp2.1\Terminus.pdb" />
+    <Content Include="Terminus\Terminus.csproj" />
+    <Content Include="Terminus\Terminus.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="Terminus\.vscode\launch.json" />
+    <None Include="Terminus\.vscode\settings.json" />
+    <None Include="Terminus\.vscode\tasks.json" />
+    <None Include="Terminus\bin\Debug\netcoreapp2.1\Terminus.deps.json" />
+    <None Include="Terminus\bin\Debug\netcoreapp2.1\Terminus.runtimeconfig.dev.json" />
+    <None Include="Terminus\bin\Debug\netcoreapp2.1\Terminus.runtimeconfig.json" />
+    <None Include="Terminus\obj\Debug\netcoreapp2.1\Terminus.AssemblyInfoInputs.cache" />
+    <None Include="Terminus\obj\Debug\netcoreapp2.1\Terminus.assets.cache" />
+    <None Include="Terminus\obj\Debug\netcoreapp2.1\Terminus.csproj.CoreCompileInputs.cache" />
+    <None Include="Terminus\obj\Debug\netcoreapp2.1\Terminus.csprojAssemblyReference.cache" />
+    <None Include="Terminus\obj\Debug\netcoreapp2.1\Terminus.csprojResolveAssemblyReference.cache" />
+    <None Include="Terminus\obj\project.assets.json" />
+    <None Include="Terminus\obj\Terminus.csproj.nuget.cache" />
+    <None Include="Terminus\obj\Terminus.csproj.nuget.g.props" />
+    <None Include="Terminus\obj\Terminus.csproj.nuget.g.targets" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSHARP.Targets" />
+  <ProjectExtensions>
+    <VisualStudio AllowExistingFolder="true" />
+  </ProjectExtensions>
+</Project>

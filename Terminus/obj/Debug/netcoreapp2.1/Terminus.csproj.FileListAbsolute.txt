@@ -1,0 +1,11 @@
+/home/nsage/Documents/Terminus/Terminus/bin/Debug/netcoreapp2.1/Terminus.deps.json
+/home/nsage/Documents/Terminus/Terminus/bin/Debug/netcoreapp2.1/Terminus.runtimeconfig.json
+/home/nsage/Documents/Terminus/Terminus/bin/Debug/netcoreapp2.1/Terminus.runtimeconfig.dev.json
+/home/nsage/Documents/Terminus/Terminus/bin/Debug/netcoreapp2.1/Terminus.dll
+/home/nsage/Documents/Terminus/Terminus/bin/Debug/netcoreapp2.1/Terminus.pdb
+/home/nsage/Documents/Terminus/Terminus/obj/Debug/netcoreapp2.1/Terminus.csprojAssemblyReference.cache
+/home/nsage/Documents/Terminus/Terminus/obj/Debug/netcoreapp2.1/Terminus.csproj.CoreCompileInputs.cache
+/home/nsage/Documents/Terminus/Terminus/obj/Debug/netcoreapp2.1/Terminus.AssemblyInfoInputs.cache
+/home/nsage/Documents/Terminus/Terminus/obj/Debug/netcoreapp2.1/Terminus.AssemblyInfo.cs
+/home/nsage/Documents/Terminus/Terminus/obj/Debug/netcoreapp2.1/Terminus.dll
+/home/nsage/Documents/Terminus/Terminus/obj/Debug/netcoreapp2.1/Terminus.pdb

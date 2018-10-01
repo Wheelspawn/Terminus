@@ -1,0 +1,10 @@
+C:\Users\Wheelspawn\Documents\Terminus\bin\Debug\ConsoleApplication.exe
+C:\Users\Wheelspawn\Documents\Terminus\bin\Debug\ConsoleApplication.pdb
+C:\Users\Wheelspawn\Documents\Terminus\obj\x86\Debug\Terminus.csprojAssemblyReference.cache
+C:\Users\Wheelspawn\Documents\Terminus\obj\x86\Debug\Terminus.csproj.CoreCompileInputs.cache
+C:\Users\Wheelspawn\Documents\Terminus\obj\x86\Debug\ConsoleApplication.exe
+C:\Users\Wheelspawn\Documents\Terminus\obj\x86\Debug\ConsoleApplication.pdb
+C:\Users\Wheelspawn\Documents\Terminus\bin\Debug\ConsoleEx.dll
+C:\Users\Wheelspawn\Documents\Terminus\obj\x86\Debug\Terminus.csproj.CopyComplete
+C:\Users\Wheelspawn\Documents\Terminus\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Wheelspawn\Documents\Terminus\bin\Debug\Newtonsoft.Json.xml
