@@ -4,7 +4,7 @@ namespace Terminus
 {
     class Mountain: Terrain, ITerrain
     {
-        NPC occupant = null;
+        Agent occupant = null;
         Random rand = new Random();
         private static int id = 3;
         public Mountain()
@@ -16,6 +16,11 @@ namespace Terminus
         public Mountain(string s) : this()
         {
             Graphic = s;
+        }
+
+        public override String ToName()
+        {
+            return "Mountain";
         }
     }
 }

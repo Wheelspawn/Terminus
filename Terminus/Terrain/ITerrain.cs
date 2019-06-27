@@ -6,10 +6,12 @@ namespace Terminus
     interface ITerrain
     {
         string Graphic { get; set; }
+        int Gold { get; set; }
         int ID  { get; set; }
         bool Impassable { get; set; }
         bool isImpassable();
         bool isOccupied();
+        String ToName();
     }
 }
 

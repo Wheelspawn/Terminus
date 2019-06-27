@@ -7,10 +7,11 @@ namespace Terminus
     {
         // List<string> graphics = new List<string> { " ` ", " ` " };
         List<string> graphics = new List<string> {"`  "," ` ","  `","`` ","` `"," ``","```"};
-        NPC occupant = null;
+        Agent occupant = null;
         private static int id = 3;
         public Grass()
         {
+            setGold(0.02, 25);
             Impassable=false;
             ID = 3;
             Graphic = graphics[r.Next()%graphics.Count];
@@ -18,6 +19,11 @@ namespace Terminus
         public Grass(string s) : this()
         {
             Graphic = s;
+        }
+
+        public override string ToName()
+        {
+            return "Grass";
         }
     }
 }

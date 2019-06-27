@@ -5,15 +5,18 @@ using System.Text;
 
 namespace Terminus
 {
-    class Altar : Terrain, ITerrain
+    class Evade : State, IState
     {
-        public Altar()
+        public void Enter(Agent n)
         {
-            Graphic = " ¤ ";
         }
-        public Altar(string g)
+
+        public void Do(Agent n)
         {
-            Graphic = g;
+        }
+
+        public void Exit(Agent n)
+        {
         }
     }
 }

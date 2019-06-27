@@ -8,70 +8,91 @@ namespace Terminus
     {
         // our map object. terrain is dynamically generated.
 
-        public List<List<Terrain>> m { get; }
+        public Terrain[,] map { get; set;  }
 
         OverworldFactory o = new OverworldFactory();
 
-        public Map() { m = new List<List<Terrain>>(); }
+        public Map() { Terrain[,] map; }
 
         public virtual void Generate() { }
 
         // grow the map
         public virtual void Grow(char d) {}
 
-        public int DimM {get { return m.Count; } }
+        public int DimM {get { return map.GetLength(0); } }
 
-        public int DimN {get { return m[0].Count; } }
+        public int DimN {get { return map.GetLength(1); } }
 
-        public void Display(Player p)
+        public void Display(int m, int n, int rad)
+        {
+            // Console.Clear();
+            string reset_line = "                ";
+            
+            for (int i=-rad+1; i<rad;i++)
+            {
+                for (int j = -rad + 1; j < rad; j++)
+                {
+                    try
+                    {
+                        ConsoleEx.WriteAt(3, rad * 2, reset_line);
+                        ConsoleEx.WriteAt(3, rad * 2 + 1, reset_line);
+
+                       ConsoleEx.WriteAt((i + rad) * 3, j + rad, map[m + i, n + j].Graphic);
+                        if (map[m + i, n + j].isOccupied() == true)
+                        {
+                            ConsoleEx.WriteAt((i + rad) * 3, j + rad, map[m + i, n + j].Occupant.ToString());
+                        }
+                        if (map[m + i, n + j].Gold > 0)
+                        {
+                            ConsoleEx.WriteAt(3, rad * 2, ("Found "+map[m + i, n + j].Gold.ToString()+" Gold").ToString());
+                        }
+                        if (map[m + i, n + j].items.Count > 0)
+                        {
+                            ConsoleEx.WriteAt(3, rad * 2 + 1, map[m + i, n + j].items[0].ToString());
+                        }
+                    }
+                    catch (IndexOutOfRangeException e)
+                    {
+                        ConsoleEx.WriteAt((i + rad) * 3, j + rad, " ^ ");
+                    }
+                }
+            }
+        }
+
+        public void Move(Agent npc, int new_m, int new_n)
         {
             try
             {
-
-                ConsoleEx.WriteAt(40, 10, m.Count.ToString());
-                ConsoleEx.WriteAt(40, 11, m[1].Count.ToString());
-
-                for (int i=p.M-5;i<p.M+6;i++)
-                {
-                    for (int j=p.N-5;j<p.N+6;j++)
-                    {
-                        if (i==p.M && j==p.N)
-                            ConsoleEx.WriteAt((j - p.N + 6)*3, (i - p.M) + 6, " @ "); // ☺
-                        else
-                            ConsoleEx.WriteAt((j - p.N + 6)*3, (i - p.M) + 6, m[i][j].Graphic);
-                    }
-                    // Console.WriteLine();
-                }
+                map[new_m, new_n].Occupant = npc;
+                map[npc.m, npc.n].Occupant = null;
+                npc.m = new_m;
+                npc.n = new_n;
             }
-            catch (ArgumentOutOfRangeException)
+            catch (IndexOutOfRangeException)
             {
-                // Console.Clear();
-                // north
-                if (p.M == 4)
-                {
-                    p.M=5;
-                    Grow('w');
-                    p.M += 21;
-                }
-                // west
-                if (p.N == 4)
-                {
-                    p.N=5;
-                    Grow('a');
-                    p.N += 21;
-                }
-                // south
-                if (p.M+5>=m.Count)
-                {
-                    Grow('s');
-                }
-                // east
-                if (p.N+5>=m[1].Count)
-                {
-                    Grow('d');
-                }
-                Display(p);
+                return;
             }
+        }
+
+        
+        public void Move(Player _p, int new_m, int new_n)
+        {
+            try
+            {
+                map[new_m, new_n].Occupant = _p;
+                map[_p.m, _p.n].Occupant = null;
+                _p.m = new_m;
+                _p.n = new_n;
+            }
+            catch (IndexOutOfRangeException)
+            {
+                return;
+            }
+        }
+
+        public void Move(Player p, char c)
+        {
+
         }
     }
 }

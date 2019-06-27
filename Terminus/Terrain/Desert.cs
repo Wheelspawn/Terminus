@@ -6,13 +6,13 @@ namespace Terminus
     class Desert : Terrain, ITerrain
     {
         List<string> graphics = new List<string> {" ┤ "," ├ ","   "};
-        NPC occupant = null;
+        Agent occupant = null;
         private static int id = 1;
         public Desert()
         {
-            Impassable=false;
+            setGold(0.02, 25);
+            Impassable =false;
             ID = 2;
-
             int c = r.Next()%15;
             if (c >= 2)
                 Graphic = "   ";
@@ -23,6 +23,11 @@ namespace Terminus
         public Desert(string s) : this()
         {
             Graphic = s;
+        }
+
+        public override string ToName()
+        {
+            return "Desert";
         }
     }
 }

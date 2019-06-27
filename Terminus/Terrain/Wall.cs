@@ -16,5 +16,10 @@ namespace Terminus
             Impassable = true;
             Graphic = g;
         }
+
+        public override String ToName()
+        {
+            return "Wall";
+        }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Microsoft.GotDotNet;
 
 namespace Terminus
@@ -7,26 +8,41 @@ namespace Terminus
     {
         static void Main(string[] args)
         {
+            String border_top = "  ~~~~~~~~~~~~~~~~\n";
+            String border_side = "  ~              ~\n";
+            String name = "  ~   TERMINVS   ~\n";
+            Console.Write("\n" + border_top + border_side + name + border_side + border_top);
+            Console.Write("\n Press any key to continue.");
 
-            Overworld o = new Overworld();
-            // o.midPoint(15*15*15);
-            Player p = new Player(o.m);
+            GameLoop g = new GameLoop();
+            g.Loop();
 
-            ConsoleEx.CursorVisible = false;
+        /*
+        int m = 625;
+        int n = 625;
 
-            o.Display(p);
+        int offset_m = 0;
+        int offset_n = 0;
 
-            // ConsoleKey g = Console.ReadKey().Key;
-            char g = (Char)ConsoleEx.ReadChar();
+        Overworld overworld = new Overworld(m,n);
+        Terrain[,] map = overworld.map;
 
-            do
+        for (int i= 0; i<25;i++)
+        {
+            for (int j = 0; j < 25; j++)
             {
-                // Console.Clear();
-                o.Display(p);
-                // g = Console.ReadKey().Key;
-                g = (Char)ConsoleEx.ReadChar();
-                p.Move(g);
-            } while (g!='Q');
+                try
+                {
+                    ConsoleEx.WriteAt(i * 3 + 1, j + 1, map[i+offset_m, j+offset_n].Graphic);
+                }
+                catch
+                {
+                    ConsoleEx.WriteAt(i * 3 + 1, j + 1, "---");
+                }
+            }
+        }
+        Console.WriteLine("\n\n\n");
+        */
         }
     }
 }
